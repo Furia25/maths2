@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maths2.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: val <val@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:15:50 by val               #+#    #+#             */
-/*   Updated: 2025/06/03 21:42:19 by val              ###   ########.fr       */
+/*   Updated: 2025/06/03 23:18:42 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ extern int			clamp(int x, int min, int max);
 extern double		dclamp(double x, double min, double max);
 extern float		fclamp(float x, float min, float max);
 
-inline int			max(int a, int b);
-inline int			min(int a, int b);
+extern int			max(int a, int b);
+extern int			min(int a, int b);
 #ifndef _USE_STANDARD_MATH
 extern double		fmax(double a, double b);
 extern float		fmaxf(float a, float b);

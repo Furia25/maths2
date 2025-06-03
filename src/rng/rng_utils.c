@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maths2_utils.h                                     :+:      :+:    :+:   */
+/*   rng_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 14:56:15 by val               #+#    #+#             */
-/*   Updated: 2025/06/03 22:20:46 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/03 22:54:14 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/03 23:13:07 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATHS2_UTILS_H
-# define MATHS2_UTILS_H
-# include <stdint.h>
+#include "maths2_rng.h"
 
-typedef union u_32cast
+uint64_t	rng_splitmix64(uint64_t *seed)
 {
-	float		f;
-	int32_t		u;
-}	t_32_cast;
+	uint64_t	z;
 
-typedef union u_64cast
-{
-	double		d;
-	int64_t		u;
-}	t_64_cast;
-
-#endif
+	*seed += 0x9E3779B97F4A7C15ULL;
+	z = *seed;
+	z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9ULL;
+	z = (z ^ (z >> 27)) * 0x94D049BB133111EBULL;
+	return (z ^ (z >> 31));
+}

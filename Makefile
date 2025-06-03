@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: val <val@student.42.fr>                    +#+  +:+       +#+         #
+#    By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 23:20:17 by val               #+#    #+#              #
-#    Updated: 2025/06/03 20:55:03 by val              ###   ########.fr        #
+#    Updated: 2025/06/03 23:18:34 by vdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,9 +66,13 @@ endif
 SRC_FILES = \
 	vectors/vec3_base.c \
 	vectors/vec3_properties.c \
-	operations.c/boundaries.c \
 	operations.c/clamp.c \
+	operations.c/max.c \
+	operations.c/min.c \
 	operations.c/misc_operations.c \
+	rng/rng_generation.c \
+	rng/rng_init.c \
+	rng/rng_utils.c \
 	sqrt.c \
 	main_test.c
 

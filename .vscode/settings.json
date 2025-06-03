@@ -9,6 +9,7 @@
 		"cstdint": "c",
 		"cmath": "cpp",
 		"pthread.h": "c",
-		"limits": "c"
+		"limits": "c",
+		"stdlib.h": "c"
 	}
 }
