@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vec3_base.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: val <val@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/09 19:04:33 by val               #+#    #+#             */
+/*   Updated: 2025/06/03 16:51:05 by val              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "maths2.h"
+
+inline t_vec3	vec3_add(const t_vec3 a, const t_vec3 b)
+{
+	return ((t_vec3){a.x + b.x, a.y + b.y, a.z + b.z});
+}
+
+inline t_vec3	vec3_sub(const t_vec3 a, const t_vec3 b)
+{
+	return ((t_vec3){a.x - b.x, a.y - b.y, a.z - b.z});
+}
+
+inline t_vec3	vec3_scale(const t_vec3 v, const float scalar)
+{
+	return ((t_vec3){v.x * scalar, v.y * scalar, v.z * scalar});
+}
+
+inline t_vec3	vec3_cross(const t_vec3 a, const t_vec3 b)
+{
+	return ((t_vec3)
+		{
+			a.y * b.z - a.z * b.y,
+			a.z * b.x - a.x * b.z,
+			a.x * b.y - a.y * b.x
+		});
+}
+
+inline float	vec3_dot(const t_vec3 a, const t_vec3 b)
+{
+	return (a.x * b.x + a.y * b.y + a.z * b.z);
+}

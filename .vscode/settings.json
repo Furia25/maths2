@@ -1,0 +1,13 @@
+{
+	"files.associations": {
+		"math.h": "c",
+		"maths2.h": "c",
+		"stdint.h": "c",
+		"mathcalls-helper-functions.h": "c",
+		"mathcalls.h": "c",
+		"maths2_utils.h": "c",
+		"cstdint": "c",
+		"cmath": "cpp",
+		"pthread.h": "c"
+	}
+}
