@@ -6,7 +6,7 @@
 #    By: val <val@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 23:20:17 by val               #+#    #+#              #
-#    Updated: 2025/06/03 16:39:44 by val              ###   ########.fr        #
+#    Updated: 2025/06/03 20:55:03 by val              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,9 @@ endif
 SRC_FILES = \
 	vectors/vec3_base.c \
 	vectors/vec3_properties.c \
-	vectors/vec3_utils.c \
+	operations.c/boundaries.c \
+	operations.c/clamp.c \
+	operations.c/misc_operations.c \
 	sqrt.c \
 	main_test.c
 

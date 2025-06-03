@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   misc_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: val <val@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 15:38:45 by val               #+#    #+#             */
-/*   Updated: 2025/06/03 21:43:28 by val              ###   ########.fr       */
+/*   Created: 2025/06/03 20:26:08 by val               #+#    #+#             */
+/*   Updated: 2025/06/03 20:50:41 by val              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <maths2.h>
-#include <stdio.h>
+#include "maths2.h"
 
-int	main(void)
+inline int	sign(double x)
 {
-	t_vec3 testv;
-	testv = (t_vec3){10,10,10};
-	testv = vec3_normalize(testv);
-	double test = ft_sqrt(2);
-	printf("%f\n", test);
-	int test2 = fmax(50, 810);
-	printf("%d\n", test2);
+	return ((x > 0) - (x < 0));
 }

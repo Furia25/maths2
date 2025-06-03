@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   min.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: val <val@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 15:38:45 by val               #+#    #+#             */
-/*   Updated: 2025/06/03 21:43:28 by val              ###   ########.fr       */
+/*   Created: 2025/06/03 20:51:02 by val               #+#    #+#             */
+/*   Updated: 2025/06/03 21:41:45 by val              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <maths2.h>
-#include <stdio.h>
-
-int	main(void)
+inline int	min(int a, int b)
 {
-	t_vec3 testv;
-	testv = (t_vec3){10,10,10};
-	testv = vec3_normalize(testv);
-	double test = ft_sqrt(2);
-	printf("%f\n", test);
-	int test2 = fmax(50, 810);
-	printf("%d\n", test2);
+	if (a < b)
+		return (a);
+	return (b);
 }
+
+#ifndef _USE_STANDARD_MATH
+
+inline double	fmin(double a, double b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+inline float	fminf(float a, float b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+#endif

@@ -8,6 +8,7 @@
 		"maths2_utils.h": "c",
 		"cstdint": "c",
 		"cmath": "cpp",
-		"pthread.h": "c"
+		"pthread.h": "c",
+		"limits": "c"
 	}
 }
