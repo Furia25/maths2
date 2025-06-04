@@ -6,12 +6,35 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 01:50:18 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 16:51:26 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 18:26:05 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATHS2_OBJECTS_H
 # define MATHS2_OBJECTS_H
+
+typedef struct s_vec2
+{
+	float	x;
+	float	y;
+}	t_vec2;
+
+typedef struct s_vec3
+{
+	float	x;
+	float	y;
+	float	z;
+}	t_vec3;
+
+/*
+Types representing 2D objects should be reserved for this usage.
+*/
+
+typedef struct s_ray2
+{
+	t_vec3	origin;
+	t_vec3	dir_normal;
+}	t_ray2;
 
 typedef struct s_circle
 {
@@ -38,18 +61,37 @@ typedef struct s_triangle
 	t_vec2	c;
 }	t_triangle;
 
-typedef struct s_vec2
-{
-	float	x;
-	float	y;
-}	t_vec2;
+/***************************************************************/
 
-typedef struct s_vec3
+/*
+Types representing 3D objects should be reserved for this usage.
+*/
+
+typedef struct s_ray3
 {
-	float	x;
-	float	y;
-	float	z;
-}	t_vec3;
+	t_vec3	origin;
+	t_vec3	dir_normal;
+}	t_ray3;
+
+typedef struct s_plane
+{
+	t_vec3	normal;
+	float	d;
+}	t_plane;
+
+typedef struct s_sphere
+{
+	t_vec3	pos;
+	double	radius;
+}	t_sphere;
+
+typedef struct s_bbox
+{
+	t_vec3	min;
+	t_vec3	max;
+}	t_bbox;
+
+/***************************************************************/
 
 typedef struct s_quaternion
 {
