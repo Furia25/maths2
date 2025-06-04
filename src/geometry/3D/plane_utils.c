@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   misc_operations.c                                  :+:      :+:    :+:   */
+/*   plane_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 20:26:08 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 18:58:02 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/04 19:11:50 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/04 19:18:19 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "maths2.h"
+#include "maths2_geometry.h"
 
-#ifdef _USE_STANDARD_MATH
-
-double	round_to(double x, double step)
+float	point_plane_signed_distance(t_vec3 point, t_plane3 plane)
 {
-	return (floor(x / step + 0.5) * step);
+	return (vec3_dot(plane.normal, point) + plane.d);
 }
 
-#endif
-
-bool	double_equal(double a, double b)
+t_vec3	project_point_on_plane(t_vec3 point, t_plane3 plane)
 {
-	return (fabs(a - b) < _DOUBLE_EPSILON);
-}
+	float	dist;
 
-bool	float_equal(float a, float b)
-{
-	return (fabsf(a - b) < _DOUBLE_EPSILON);
+	dist = point_plane_signed_distance(point, plane);
+	return (vec3_sub(point, vec3_scale(plane.normal, dist)));
 }

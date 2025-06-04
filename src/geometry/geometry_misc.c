@@ -6,12 +6,24 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 16:17:00 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 18:27:18 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 18:36:28 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "maths2.h"
 #include "maths2_vectors.h"
+
+t_plane3	plane3_from_points(t_vec3 a, t_vec3 b, t_vec3 c)
+{
+	t_vec3	ab;
+	t_vec3	ac;
+	t_vec3	normal;
+
+	ab = vec3_sub(b, a);
+	ac = vec3_sub(c, a);
+	normal = vec3_normalize(vec3_cross(ab, ac));
+	return ((t_plane3){normal, -vec3_dot(normal, a)});
+}
 
 t_rect	rect_from_rectb(const t_rect_bounds rectb)
 {

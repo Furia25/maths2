@@ -6,16 +6,25 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:15:50 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 16:41:49 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 19:00:58 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATHS2_H
 # define MATHS2_H
+# include "stdbool.h"
 
-# ifdef __has_include
-#  if __has_include(<math.h>)
-#   include <math.h>
+# define STANDALONE_IMPLEMENTATION	1
+
+# if STANDALONE_IMPLEMENTATION == 1
+#  define _USE_STANDALONE_MATH
+# endif
+
+# ifndef _USE_STANDALONE_MATH
+#  ifdef __has_include
+#   if __has_include(<math.h>)
+#    include <math.h>
+#   endif
 #  endif
 # endif
 
@@ -26,6 +35,9 @@
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
 # endif
+
+# define _FLOAT_EPSILON 1e-6f
+# define _DOUBLE_EPSILON 1e-12
 
 extern double		deg_to_rad(double deg);
 extern double		rad_to_deg(double rad);
@@ -43,6 +55,8 @@ extern int			min(int a, int b);
 extern int			m2_abs(int x);
 extern int			normalize(int x, int min, int max);
 extern double		dnormalize(double x, double min, double max);
+extern bool			double_equal(double a, double b);
+extern bool			float_equal(float a, float b);
 
 # ifndef _USE_STANDARD_MATH
 
@@ -50,7 +64,8 @@ extern double		fmax(double a, double b);
 extern float		fmaxf(float a, float b);
 extern double		fmin(double a, double b);
 extern float		fminf(float a, float b);
-
+extern float		fabsf(float x);
+extern double		fabs(double x);
 # else
 
 extern double		round_to(double x, double step);

@@ -6,12 +6,13 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 01:48:16 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 02:21:44 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 19:05:58 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATHS2_VEC3_H
 # define MATHS2_VEC3_H
+# include <stdbool.h>
 # include "maths2_objects.h"
 
 extern t_vec3		vec3_add(const t_vec3 a, const t_vec3 b);
@@ -25,6 +26,7 @@ extern float		vec3_distance2(const t_vec3 a, const t_vec3 b);
 extern t_vec3		vec3_normalize(t_vec3 v);
 extern t_quaternion	vec3_to_homogeneous(const t_vec3 v);
 extern t_vec2		vec3_to_vec2(t_vec3 v);
-extern t_vec3		vec3_new(float x, float y);
+extern t_vec3		vec3_new(float x, float y, float z);
+extern bool			vec3_equal(t_vec3 a, t_vec3 b);
 
 #endif

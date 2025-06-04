@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 01:50:18 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 18:26:05 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 18:31:58 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ typedef struct s_ray3
 	t_vec3	dir_normal;
 }	t_ray3;
 
-typedef struct s_plane
+typedef struct s_plane3
 {
 	t_vec3	normal;
 	float	d;
-}	t_plane;
+}	t_plane3;
 
 typedef struct s_sphere
 {

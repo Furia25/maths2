@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 02:42:46 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 16:46:31 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 18:51:33 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,12 @@ double	fabs(double x)
 		return (x * -1);
 	return (x);
 }
+
+float	fabsf(float x)
+{
+	if (x < 0)
+		return (x * -1);
+	return (x);
+}
+
 #endif
