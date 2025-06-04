@@ -6,7 +6,7 @@
 #    By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 23:20:17 by val               #+#    #+#              #
-#    Updated: 2025/06/03 23:18:34 by vdurand          ###   ########.fr        #
+#    Updated: 2025/06/04 02:25:29 by vdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,8 +64,11 @@ endif
 
 
 SRC_FILES = \
+	vectors/vec_convertions.c \
 	vectors/vec3_base.c \
 	vectors/vec3_properties.c \
+	vectors/vec2_base.c \
+	vectors/vec2_properties.c \
 	operations.c/clamp.c \
 	operations.c/max.c \
 	operations.c/min.c \
@@ -81,7 +84,7 @@ OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 DEP = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.d, $(SRC))
 
 CC = cc 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -O2 -flto
 INCLUDES = -I$(INC_DIR) -lm
 
 all: $(NAME)

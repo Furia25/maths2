@@ -6,11 +6,11 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:51:02 by val               #+#    #+#             */
-/*   Updated: 2025/06/03 22:20:58 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 02:04:19 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-inline int	min(int a, int b)
+int	min(int a, int b)
 {
 	if (a < b)
 		return (a);
@@ -19,14 +19,14 @@ inline int	min(int a, int b)
 
 #ifndef _USE_STANDARD_MATH
 
-inline double	fmin(double a, double b)
+double	fmin(double a, double b)
 {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-inline float	fminf(float a, float b)
+float	fminf(float a, float b)
 {
 	if (a < b)
 		return (a);

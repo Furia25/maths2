@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sqrt.c                                             :+:      :+:    :+:   */
+/*   maths2_objects.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 16:34:17 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 01:55:58 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/04 01:50:18 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/04 01:51:29 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "maths2_utils.h"
+#ifndef MATHS2_OBJECTS_H
+# define MATHS2_OBJECTS_H
 
-double	m2_invsqrt(double number)
+typedef struct s_vec2
 {
-	t_64_cast	conv;
-	double		y;
-	double		halfx;
+	float	x;
+	float	y;
+}	t_vec2;
 
-	halfx = number * 0.5;
-	conv.d = number;
-	conv.u = 0x5FE6EB50C7B537A9ULL - (conv.u >> 1);
-	y = conv.d;
-	y = y * (1.5 - (halfx * y * y));
-	y = y * (1.5 - (halfx * y * y));
-	return (y);
-}
-
-double	m2_sqrt(double x)
+typedef struct s_vec3
 {
-	return (x * m2_invsqrt(x));
-}
+	float	x;
+	float	y;
+	float	z;
+}	t_vec3;
+
+typedef struct s_quaternion
+{
+	float	x;
+	float	y;
+	float	z;
+	float	w;
+}	t_quaternion;
+
+#endif

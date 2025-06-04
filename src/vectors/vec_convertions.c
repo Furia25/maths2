@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sqrt.c                                             :+:      :+:    :+:   */
+/*   vec_convertions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 16:34:17 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 01:55:58 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/04 01:29:12 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/04 02:24:36 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "maths2_utils.h"
+#include "private/maths2_objects.h"
 
-double	m2_invsqrt(double number)
+t_vec2	vec2_new(float x, float y)
 {
-	t_64_cast	conv;
-	double		y;
-	double		halfx;
-
-	halfx = number * 0.5;
-	conv.d = number;
-	conv.u = 0x5FE6EB50C7B537A9ULL - (conv.u >> 1);
-	y = conv.d;
-	y = y * (1.5 - (halfx * y * y));
-	y = y * (1.5 - (halfx * y * y));
-	return (y);
+	return ((t_vec2){x, y});
 }
 
-double	m2_sqrt(double x)
+t_vec3	vec3_new(float x, float y, float z)
 {
-	return (x * m2_invsqrt(x));
+	return ((t_vec3){x, y, z});
+}
+
+t_vec3	vec2_to_vec3(t_vec2 v)
+{
+	return ((t_vec3){v.x, v.y, 0});
+}
+
+t_vec2	vec3_to_vec2(t_vec3 v)
+{
+	return ((t_vec2){v.x, v.y});
 }

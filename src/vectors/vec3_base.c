@@ -6,28 +6,28 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 19:04:33 by val               #+#    #+#             */
-/*   Updated: 2025/06/03 22:20:52 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 02:24:45 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "maths2.h"
+#include "private/maths2_objects.h"
 
-inline t_vec3	vec3_add(const t_vec3 a, const t_vec3 b)
+t_vec3	vec3_add(const t_vec3 a, const t_vec3 b)
 {
 	return ((t_vec3){a.x + b.x, a.y + b.y, a.z + b.z});
 }
 
-inline t_vec3	vec3_sub(const t_vec3 a, const t_vec3 b)
+t_vec3	vec3_sub(const t_vec3 a, const t_vec3 b)
 {
 	return ((t_vec3){a.x - b.x, a.y - b.y, a.z - b.z});
 }
 
-inline t_vec3	vec3_scale(const t_vec3 v, const float scalar)
+t_vec3	vec3_scale(const t_vec3 v, const float scalar)
 {
 	return ((t_vec3){v.x * scalar, v.y * scalar, v.z * scalar});
 }
 
-inline t_vec3	vec3_cross(const t_vec3 a, const t_vec3 b)
+t_vec3	vec3_cross(const t_vec3 a, const t_vec3 b)
 {
 	return ((t_vec3)
 		{
@@ -37,7 +37,7 @@ inline t_vec3	vec3_cross(const t_vec3 a, const t_vec3 b)
 		});
 }
 
-inline float	vec3_dot(const t_vec3 a, const t_vec3 b)
+float	vec3_dot(const t_vec3 a, const t_vec3 b)
 {
 	return (a.x * b.x + a.y * b.y + a.z * b.z);
 }

@@ -6,13 +6,20 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:26:08 by val               #+#    #+#             */
-/*   Updated: 2025/06/03 22:20:59 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 02:04:17 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "maths2.h"
 
-inline int	sign(double x)
+int	sign(double x)
 {
 	return ((x > 0) - (x < 0));
+}
+
+int	m2_abs(int x)
+{
+	if (x < 0)
+		return (x * -1);
+	return (x);
 }

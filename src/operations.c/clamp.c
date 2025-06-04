@@ -6,11 +6,11 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:47:25 by val               #+#    #+#             */
-/*   Updated: 2025/06/03 22:20:56 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 02:04:23 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-inline int	clamp(int x, int min, int max)
+int	clamp(int x, int min, int max)
 {
 	if (x < min)
 		return (min);
@@ -19,7 +19,7 @@ inline int	clamp(int x, int min, int max)
 	return (x);
 }
 
-inline double	dclamp(double x, double min, double max)
+double	dclamp(double x, double min, double max)
 {
 	if (x < min)
 		return (min);
@@ -28,7 +28,7 @@ inline double	dclamp(double x, double min, double max)
 	return (x);
 }
 
-inline float	fclamp(float x, float min, float max)
+float	fclamp(float x, float min, float max)
 {
 	if (x < min)
 		return (min);

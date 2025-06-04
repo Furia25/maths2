@@ -10,6 +10,9 @@
 		"cmath": "cpp",
 		"pthread.h": "c",
 		"limits": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"stdio.h": "c",
+		"maths2_objects.h": "c",
+		"maths2_vec2.h": "c"
 	}
 }
