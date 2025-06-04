@@ -6,7 +6,7 @@
 #    By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 23:20:17 by val               #+#    #+#              #
-#    Updated: 2025/06/04 02:31:09 by vdurand          ###   ########.fr        #
+#    Updated: 2025/06/04 16:13:52 by vdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,11 @@ endif
 
 
 SRC_FILES = \
+	easing/blending.c \
+	easing/easing_back.c \
+	easing/easing_bounce.c \
+	easing/easing_cubic.c \
+	easing/easing_quad.c \
 	vectors/vectors_convertions.c \
 	vectors/vectors_utils.c \
 	vectors/vec3_base.c \
