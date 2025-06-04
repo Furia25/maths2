@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 16:17:00 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 18:36:28 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 22:51:32 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ double	distance_2d(double x1, double y1, double x2, double y2)
 
 #ifdef _USE_STANDARD_MATH
 
-float	point_direction2D(t_vec2 origin, t_vec2 target)
+float	point_direction2d(t_vec2 origin, t_vec2 target)
 {
 	return (atan2f(target.y - origin.y, target.x - origin.x));
 }

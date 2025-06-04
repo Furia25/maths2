@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 16:09:05 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 16:12:05 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 22:52:41 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ float	ease_bounce_out(float t)
 	return (bounce_out(t));
 }
 
-float	ease_bounce_inOut(float t)
+float	ease_bounce_inout(float t)
 {
 	if (t < 0.5)
 	{

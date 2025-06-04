@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   back_easing.c                                      :+:      :+:    :+:   */
+/*   easing_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 16:01:23 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 16:06:04 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 22:52:38 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ float	ease_back_out(float t)
 	return (1.0f + _C3 * u * u * u + _C1 * u * u);
 }
 
-float	ease_back_inOut(float t)
+float	ease_back_inout(float t)
 {
 	float	u;
 

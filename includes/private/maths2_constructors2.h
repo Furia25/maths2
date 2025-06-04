@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easing_cubic.c                                     :+:      :+:    :+:   */
+/*   maths2_constructors2.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 15:52:00 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 22:53:03 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/05 01:05:45 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/05 01:10:35 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-float	ease_cubic_in(float t)
+#ifndef MATHS2_CONSTRUCTORS2_H
+# define MATHS2_CONSTRUCTORS2_H
+# include "maths2_objects.h"
+
+static inline t_bbox	bbox_new(t_vec3 min, t_vec3 max)
 {
-	return (t * t * t);
+	return ((t_bbox){min, max});
 }
 
-float	ease_cubic_out(float t)
+static inline t_sphere	sphere_new(t_vec3 pos, float radius)
 {
-	float	u;
-
-	u = t - 1.0f;
-	return (u * u * u + 1.0f);
+	return ((t_sphere){pos, radius});
 }
 
-float	ease_cubic_inout(float t)
+static inline t_triangle3	triangle3_new(t_vec3 a, t_vec3 b, t_vec3 c)
 {
-	float	u;
-
-	if (t < 0.5f)
-	{
-		return (4.0f * t * t * t);
-	}
-	else
-	{
-		u = (2.0f * t) - 2.0f;
-		return (0.5f * (u * u * u + 2.0f));
-	}
+	return ((t_triangle3){a, b, c});
 }
+
+#endif

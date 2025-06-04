@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 15:38:45 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 02:37:55 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/05 01:26:53 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@
 	}
 }*/
 
-#include "maths2_vectors.h"
+#include "maths2.h"
+#include "maths2_geometry.h"
 
-int	main(void)
+int main(void)
 {
-	t_vec2 test;
-	test = vec2_new(50, 15);
-	test = vec2_add(test, vec2_new(50, 50));
-	printf("%f\n", test.x);
+	t_rect t = rect_new(vec2_new(4, 5), vec2_new(50, 50));
+	t.size.x += 1;
+	printf("%f", t.size.x);
 }

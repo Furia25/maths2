@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 01:50:18 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 18:31:58 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/05 01:18:19 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Types representing 2D objects should be reserved for this usage.
 
 typedef struct s_ray2
 {
-	t_vec3	origin;
-	t_vec3	dir_normal;
+	t_vec2	origin;
+	t_vec2	dir_normal;
 }	t_ray2;
 
 typedef struct s_circle
@@ -90,6 +90,13 @@ typedef struct s_bbox
 	t_vec3	min;
 	t_vec3	max;
 }	t_bbox;
+
+typedef struct s_triangle3
+{
+	t_vec3	a;
+	t_vec3	b;
+	t_vec3	c;
+}	t_triangle3;
 
 /***************************************************************/
 

@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:15:50 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 19:00:58 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 23:04:21 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MATHS2_H
 # include "stdbool.h"
 
-# define STANDALONE_IMPLEMENTATION	1
+# define STANDALONE_IMPLEMENTATION	0
 
 # if STANDALONE_IMPLEMENTATION == 1
 #  define _USE_STANDALONE_MATH

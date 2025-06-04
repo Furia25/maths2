@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:06:46 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 19:15:41 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 22:56:36 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,13 @@ bool	point_in_triangle(t_vec2 p, const t_triangle t)
 	float	d1;
 	float	d2;
 	float	d3;
+	bool	has_neg;
+	bool	has_pos;
 
 	d1 = signed_area(p, t.a, t.b);
 	d2 = signed_area(p, t.b, t.c);
 	d3 = signed_area(p, t.c, t.a);
-	return (!((d1 < 0) || (d2 < 0)
-			|| (d3 < 0) && (d1 > 0) || (d2 > 0) || (d3 > 0)));
+	has_neg = (d1 < 0.0f) || (d2 < 0.0f) || (d3 < 0.0f);
+	has_pos = (d1 > 0.0f) || (d2 > 0.0f) || (d3 > 0.0f);
+	return (!(has_neg && has_pos));
 }

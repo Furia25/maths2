@@ -6,7 +6,7 @@
 #    By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 23:20:17 by val               #+#    #+#              #
-#    Updated: 2025/06/04 16:13:52 by vdurand          ###   ########.fr        #
+#    Updated: 2025/06/05 01:28:04 by vdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,36 +64,43 @@ endif
 
 
 SRC_FILES = \
-	easing/blending.c \
-	easing/easing_back.c \
-	easing/easing_bounce.c \
-	easing/easing_cubic.c \
-	easing/easing_quad.c \
-	vectors/vectors_convertions.c \
-	vectors/vectors_utils.c \
-	vectors/vec3_base.c \
-	vectors/vec3_properties.c \
-	vectors/vec2_base.c \
-	vectors/vec2_properties.c \
+	geometry/geometry_misc.c \
 	operations/clamp.c \
 	operations/max.c \
 	operations/min.c \
 	operations/misc_operations.c \
+	operations/normalize.c \
+	operations/sign.c \
 	rng/rng_generation.c \
 	rng/rng_init.c \
 	rng/rng_utils.c \
+	vectors/vec2_base.c \
+	vectors/vec2_properties.c \
+	vectors/vec3_base.c \
+	vectors/vec3_properties.c \
+	vectors/vectors_utils.c \
+	angles.c \
+	main_test.c \
 	sqrt.c \
-	main_test.c
+	geometry/3D/rays3D.c \
+	geometry/3D/point_overlapping.c \
+	geometry/3D/plane_utils.c \
+	geometry/3D/geometry_overlapping.c \
+	geometry/2D/point_overlapping.c \
+	geometry/2D/geometry_overlapping.c \
+	easing/easing_quad.c \
+	easing/easing_cubic.c \
+	easing/easing_bounce.c \
+	easing/easing_back.c \
+	easing/blending.c
 
 SRC = $(patsubst %.c, $(SRC_DIR)/%.c, $(SRC_FILES))
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 DEP = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.d, $(SRC))
 
 CC = cc 
-CFLAGS = -Wall -Werror -Wextra -O2 -flto
+CFLAGS = -Wall -Werror -Wextra -O3 -Winline
 INCLUDES = -I$(INC_DIR) -lm
-
-all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) -o $@ $^ $(INCLUDES)

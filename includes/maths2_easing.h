@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 15:56:28 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 16:24:57 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 22:52:52 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,18 @@ formulas as they are implemented in postcss
 
 extern float	ease_quad_in(float t);
 extern float	ease_quad_out(float t);
-extern float	ease_quad_inOut(float t);
+extern float	ease_quad_inout(float t);
 
 extern float	ease_cubic_in(float t);
 extern float	ease_cubic_out(float t);
-extern float	ease_cubic_inOut(float t);
+extern float	ease_cubic_inout(float t);
 
 extern float	ease_back_in(float t);
 extern float	ease_back_out(float t);
-extern float	ease_back_inOut(float t);
+extern float	ease_back_inout(float t);
 
 extern float	ease_bounce_in(float t);
 extern float	ease_bounce_out(float t);
-extern float	ease_bounce_inOut(float t);
+extern float	ease_bounce_inout(float t);
 
 #endif
