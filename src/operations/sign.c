@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maths2_vectors.h                                   :+:      :+:    :+:   */
+/*   sign.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 02:18:35 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 02:32:06 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/04 02:42:46 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/04 02:43:02 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATHS2_VECTORS_H
-# define MATHS2_VECTORS_H
+int	sign(double x)
+{
+	return ((x > 0) - (x < 0));
+}
 
-# include "private/maths2_vec2.h"
-# include "private/maths2_vec3.h"
+int	m2_abs(int x)
+{
+	if (x < 0)
+		return (x * -1);
+	return (x);
+}
 
+#ifndef _USE_STANDARD_MATH
+
+double	fabs(double x)
+{
+	if (x < 0)
+		return (x * -1);
+	return (x);
+}
 #endif

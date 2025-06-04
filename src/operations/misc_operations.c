@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max.c                                              :+:      :+:    :+:   */
+/*   misc_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 20:51:02 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 02:04:22 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/03 20:26:08 by val               #+#    #+#             */
+/*   Updated: 2025/06/04 02:44:29 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
+#include "maths2.h"
 
-#ifndef _USE_STANDARD_MATH
+#ifdef _USE_STANDARD_MATH
 
-double fmax(double a, double b)
+double	round_to(double x, double step)
 {
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-float fmaxf(float a, float b)
-{
-	if (a > b)
-		return (a);
-	return (b);
+	return (floor(x / step + 0.5) * step);
 }
 #endif

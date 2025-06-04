@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   misc_operations.c                                  :+:      :+:    :+:   */
+/*   basic_blending.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 20:26:08 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 02:04:17 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/04 02:46:25 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/04 02:52:24 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "maths2.h"
-
-int	sign(double x)
+double	lerp(double a, double b, double t)
 {
-	return ((x > 0) - (x < 0));
+	return (a + (b - a) * t);
 }
 
-int	m2_abs(int x)
+double	step(double edge, double x)
 {
-	if (x < 0)
-		return (x * -1);
-	return (x);
+	if (x < edge)
+		return (0.0);
+	return (1.0);
+}
+
+double	smoothstep(double edge0, double edge1, double x)
+{
+	double	x;
+
+	x = clamp((x - edge0) / (edge1 - edge0));
+	return (x * x * (3.0f - 2.0f * x));
 }

@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maths2_vectors.h                                   :+:      :+:    :+:   */
+/*   normalize.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 02:18:35 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 02:32:06 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/04 02:43:14 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/04 02:43:22 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATHS2_VECTORS_H
-# define MATHS2_VECTORS_H
+int	normalize(int x, int min, int max)
+{
+	return ((x - min) / (max - min));
+}
 
-# include "private/maths2_vec2.h"
-# include "private/maths2_vec3.h"
-
-#endif
+double	dnormalize(double x, double min, double max)
+{
+	return ((x - min) / (max - min));
+}

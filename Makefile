@@ -6,7 +6,7 @@
 #    By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 23:20:17 by val               #+#    #+#              #
-#    Updated: 2025/06/04 02:25:29 by vdurand          ###   ########.fr        #
+#    Updated: 2025/06/04 02:31:09 by vdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,15 +64,16 @@ endif
 
 
 SRC_FILES = \
-	vectors/vec_convertions.c \
+	vectors/vectors_convertions.c \
+	vectors/vectors_utils.c \
 	vectors/vec3_base.c \
 	vectors/vec3_properties.c \
 	vectors/vec2_base.c \
 	vectors/vec2_properties.c \
-	operations.c/clamp.c \
-	operations.c/max.c \
-	operations.c/min.c \
-	operations.c/misc_operations.c \
+	operations/clamp.c \
+	operations/max.c \
+	operations/min.c \
+	operations/misc_operations.c \
 	rng/rng_generation.c \
 	rng/rng_init.c \
 	rng/rng_utils.c \

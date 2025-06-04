@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 01:06:36 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 02:26:17 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 02:29:12 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,4 @@ t_vec3	vec3_normalize(t_vec3 v)
 		v.z /= length;
 	}
 	return (v);
-}
-
-t_quaternion	vec3_to_homogeneous(const t_vec3 v)
-{
-	return ((t_quaternion){v.x, v.y, v.z, 1.0f});
 }

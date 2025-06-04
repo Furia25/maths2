@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:15:50 by val               #+#    #+#             */
-/*   Updated: 2025/06/04 02:22:23 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 02:45:12 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@
 #  define M_PI 3.14159265358979323846
 # endif
 
-double				m2_invsqrt(double number);
+extern double		deg_to_rad(double deg);
+extern double		rad_to_deg(double rad);
+
+extern double		m2_invsqrt(double number);
 extern double		m2_sqrt(double x);
 
 extern int			clamp(int x, int min, int max);
@@ -36,13 +39,22 @@ extern float		fclamp(float x, float min, float max);
 
 extern int			max(int a, int b);
 extern int			min(int a, int b);
-extern int			m2_abs(int x);
 
-#ifndef _USE_STANDARD_MATH
+extern int			m2_abs(int x);
+extern int			normalize(int x, int min, int max);
+extern double		dnormalize(double x, double min, double max);
+
+# ifndef _USE_STANDARD_MATH
+
 extern double		fmax(double a, double b);
 extern float		fmaxf(float a, float b);
 extern double		fmin(double a, double b);
 extern float		fminf(float a, float b);
-#endif
+
+# else
+
+extern double		round_to(double x, double step);
+
+# endif
 
 #endif
