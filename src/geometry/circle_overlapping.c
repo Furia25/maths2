@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sign.c                                             :+:      :+:    :+:   */
+/*   circle_overlapping.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 02:42:46 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 16:46:31 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/04 16:50:18 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/04 16:53:35 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "maths2.h"
+#include "maths2_geometry.h"
 
-int	sign(double x)
+bool	point_in_circle_p(const t_circle *c, t_vec2 p)
 {
-	return ((x > 0) - (x < 0));
+	float	dx;
+	float	dy;
+
+	dx = p.x - c->pos.x;
+	dy = p.y - c->pos.y;
+	return ((dx * dx) + (dy * dy) <= (c->radius * c->radius));
 }
 
-int	m2_abs(int x)
+bool	point_in_circle(const t_circle c, t_vec2 p)
 {
-	if (x < 0)
-		return (x * -1);
-	return (x);
-}
+	float	dx;
+	float	dy;
 
-#ifndef _USE_STANDARD_MATH
-
-double	fabs(double x)
-{
-	if (x < 0)
-		return (x * -1);
-	return (x);
+	dx = p.x - c.pos.x;
+	dy = p.y - c.pos.y;
+    return (dx * dx + dy * dy <= (c.radius * c.radius));
 }
-#endif

@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 01:50:18 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/04 03:00:36 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/04 16:51:26 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 typedef struct s_circle
 {
 	t_vec2	pos;
-	double	r;
+	double	radius;
 }	t_circle;
 
 typedef struct s_rect
