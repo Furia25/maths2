@@ -6,7 +6,7 @@
 #    By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 23:20:17 by val               #+#    #+#              #
-#    Updated: 2025/06/05 01:28:04 by vdurand          ###   ########.fr        #
+#    Updated: 2025/06/05 19:36:38 by vdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ HIDDEN = \033[8m
 RESET = \033[0m
 ##################
 
-NAME = test
+NAME = libmaths2.a
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -64,6 +64,14 @@ endif
 
 
 SRC_FILES = \
+	geometry/2D/geometry_overlapping.c \
+	geometry/2D/point_overlapping.c \
+	geometry/2D/rays2_basics.c \
+	geometry/3D/geometry_overlapping.c \
+	geometry/3D/plane_utils.c \
+	geometry/3D/point_overlapping.c \
+	geometry/3D/rays3_basics.c \
+	geometry/3D/rays3_intersects.c \
 	geometry/geometry_misc.c \
 	operations/clamp.c \
 	operations/max.c \
@@ -80,19 +88,12 @@ SRC_FILES = \
 	vectors/vec3_properties.c \
 	vectors/vectors_utils.c \
 	angles.c \
-	main_test.c \
 	sqrt.c \
-	geometry/3D/rays3D.c \
-	geometry/3D/point_overlapping.c \
-	geometry/3D/plane_utils.c \
-	geometry/3D/geometry_overlapping.c \
-	geometry/2D/point_overlapping.c \
-	geometry/2D/geometry_overlapping.c \
 	easing/easing_quad.c \
 	easing/easing_cubic.c \
-	easing/easing_bounce.c \
 	easing/easing_back.c \
-	easing/blending.c
+	easing/blending.c \
+	easing/easing_bounce.c
 
 SRC = $(patsubst %.c, $(SRC_DIR)/%.c, $(SRC_FILES))
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
@@ -103,10 +104,10 @@ CFLAGS = -Wall -Werror -Wextra -O3 -Winline
 INCLUDES = -I$(INC_DIR) -lm
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) -o $@ $^ $(INCLUDES)
+	$(SILENT) $(AR) rcs $@ $^ $(DUMP_OUT)
 	@echo "$(BG_GREEN)>>> Library $@ built$(RESET)"
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile $(INC_DIR)/*.h | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile | $(OBJ_DIR)
 	$(SILENT) mkdir -p $(dir $@)
 	@echo "$(BLUE)>>> Compiling $<...$(RESET)"
 	$(SILENT)$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@

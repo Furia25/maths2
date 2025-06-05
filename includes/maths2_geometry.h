@@ -6,7 +6,7 @@
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 16:24:28 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/05 01:08:14 by vdurand          ###   ########.fr       */
+/*   Updated: 2025/06/05 19:24:54 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@
 
 float	point_direction2d(t_vec2 origin, t_vec2 target);
 # endif
+
+/*2D RAYS*/
+
+t_ray2	ray2_from_angle(t_vec2 origin, float angle);
+t_ray2	ray2_from_points(t_vec2 origin, t_vec2 target);
+t_vec2	ray2_point_at(t_ray2 ray, float t);
+
+/*3D RAYS*/
+
+t_ray3	ray3_from_points(t_vec3 origin, t_vec3 target);
+t_ray3	ray3_from_direction(t_vec3 origin, t_vec3 direction);
+t_vec3	ray3_point_at(t_ray3 ray, float t);
 
 /*Functions to operate on 2D objects*/
 
