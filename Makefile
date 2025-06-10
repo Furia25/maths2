@@ -6,7 +6,7 @@
 #    By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 23:20:17 by val               #+#    #+#              #
-#    Updated: 2025/06/05 19:36:38 by vdurand          ###   ########.fr        #
+#    Updated: 2025/06/10 18:55:22 by vdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,6 +87,8 @@ SRC_FILES = \
 	vectors/vec3_base.c \
 	vectors/vec3_properties.c \
 	vectors/vectors_utils.c \
+	vectors/vec2_misc.c \
+	vectors/vec3_misc.c \
 	angles.c \
 	sqrt.c \
 	easing/easing_quad.c \
@@ -101,7 +103,7 @@ DEP = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.d, $(SRC))
 
 CC = cc 
 CFLAGS = -Wall -Werror -Wextra -O3 -Winline
-INCLUDES = -I$(INC_DIR) -lm
+INCLUDES = -I$(INC_DIR)
 
 $(NAME): $(OBJ)
 	$(SILENT) $(AR) rcs $@ $^ $(DUMP_OUT)
