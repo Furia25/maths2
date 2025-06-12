@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maths2_constructors2.h                             :+:      :+:    :+:   */
+/*   constructors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdurand <vdurand@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/05 01:05:45 by vdurand           #+#    #+#             */
-/*   Updated: 2025/06/05 01:10:35 by vdurand          ###   ########.fr       */
+/*   Created: 2025/06/12 17:55:31 by vdurand           #+#    #+#             */
+/*   Updated: 2025/06/12 19:16:55 by vdurand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATHS2_CONSTRUCTORS2_H
-# define MATHS2_CONSTRUCTORS2_H
-# include "maths2_objects.h"
+#include "maths2_geometry.h"
 
-static inline t_bbox	bbox_new(t_vec3 min, t_vec3 max)
+t_circle	circle_new(t_vec2 pos, float radius)
 {
-	return ((t_bbox){min, max});
+	return ((t_circle){pos, radius});
 }
 
-static inline t_sphere	sphere_new(t_vec3 pos, float radius)
+t_rect	rect_new(t_vec2 pos, t_vec2 size)
 {
-	return ((t_sphere){pos, radius});
+	return ((t_rect){pos, size});
 }
 
-static inline t_triangle3	triangle3_new(t_vec3 a, t_vec3 b, t_vec3 c)
+t_rect	rect_new_from_bounds(t_vec2 min, t_vec3 max)
 {
-	return ((t_triangle3){a, b, c});
+	return ((t_rect){min, {max.x - min.x, max.y - min.y}});
 }
 
-#endif
+t_triangle	triangle_new(t_vec2 a, t_vec2 b, t_vec2 c)
+{
+	return ((t_triangle){a, b, c});
+}
